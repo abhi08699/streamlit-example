@@ -2,8 +2,9 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
-import nltk as nltk
+import nltk
 nltk.download('punkt')
+
 from nltk.translate.bleu_score import corpus_bleu
 from nltk.translate import meteor
 from nltk import word_tokenize
