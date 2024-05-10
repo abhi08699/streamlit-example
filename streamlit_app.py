@@ -11,7 +11,6 @@ reference_translations = ["When there is a lack of adherence between the feet an
 # Calculate BLEU score
 #bleu_score = calculate_bleu(candidate_translation, reference_translations)
 candidate_tokens = candidate_translation.split()
-references_tokens = [reference_translations.split() for ref in references]
+references_tokens = [ref.split() for ref in reference_translations]
 bleu_score =  corpus_bleu([references_tokens], [candidate_tokens])
-print("BLEU Score:", bleu_score)
 print("BLEU Score:", round(bleu_score,2))
