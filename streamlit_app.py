@@ -20,4 +20,4 @@ candidate_tokens = candidate_translation.split()
 references_tokens = [ref.split() for ref in reference_translations]
 bleu_score =  corpus_bleu([references_tokens], [candidate_tokens])
 st.write("BLEU Score:", round(bleu_score,2))
-st.write("Meteor Score:",(round(meteor([word_tokenize(candidate_translation)],word_tokenize(reference_text)), 2))
+st.write("Meteor Score:", round(meteor([word_tokenize(candidate_translation)],word_tokenize(reference_text)), 2))
