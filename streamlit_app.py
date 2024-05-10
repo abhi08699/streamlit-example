@@ -9,6 +9,9 @@ candidate_translation = "When there is a lack of adherence between the feet and 
 reference_translations = ["When there is a lack of adherence between the feet and the surface of a step, it is: Answer 1. Fall Answer 2. Trip Answer 3. Slip. Electrical appliances and machinery are found in virtually every home and workplace. While they are common and convenient, they can also be quite dangerous. Thousands of people are shocked every year."]
 
 # Calculate BLEU score
-bleu_score = calculate_bleu(candidate_translation, reference_translations)
+#bleu_score = calculate_bleu(candidate_translation, reference_translations)
+candidate_tokens = candidate_translation.split()
+references_tokens = [reference_translations.split() for ref in references]
+bleu_score =  corpus_bleu([references_tokens], [candidate_tokens])
 print("BLEU Score:", bleu_score)
 print("BLEU Score:", round(bleu_score,2))
