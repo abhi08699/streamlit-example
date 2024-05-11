@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 import nltk
 nltk.download('punkt')
-
+nltk.download('wordnet')
 from nltk.translate.bleu_score import corpus_bleu
 from nltk.translate import meteor
 from nltk import word_tokenize
