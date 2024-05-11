@@ -16,10 +16,10 @@ from nltk import word_tokenize
 
 candidate_translation = st.text_input("candidate_translation")
 reference_translation = st.text_input("reference_translations")
-
+reference_translations = [reference_translation]
 # Calculate BLEU score
 #bleu_score = calculate_bleu(candidate_translation, reference_translations)
 candidate_tokens = candidate_translation.split()
-references_tokens = [ref.split() for ref in reference_translations[reference_translation]]
+references_tokens = [ref.split() for ref in reference_translations]
 st.write("BLEU Score:", round(corpus_bleu([references_tokens], [candidate_tokens]),2))
 st.write("Meteor Score:", round(meteor([word_tokenize(candidate_translation)],word_tokenize(reference_translation)), 2))
