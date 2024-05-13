@@ -7,6 +7,7 @@ import sklearn
 
 nltk.download('punkt')
 nltk.download('wordnet')
+nltk.download('stopwords')
 from nltk.translate.bleu_score import corpus_bleu
 from nltk.translate import meteor
 from nltk import word_tokenize
