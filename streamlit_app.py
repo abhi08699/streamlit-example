@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import nltk
+import sklearn
+
 nltk.download('punkt')
 nltk.download('wordnet')
 from nltk.translate.bleu_score import corpus_bleu
@@ -11,7 +13,6 @@ from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
-import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 # Example usage:
