@@ -30,4 +30,4 @@ if st.button:
   st.write("Corpus BLEU Score:", round(corpus_bleu([references_tokens], [candidate_tokens]),2))
   st.write("Sentence BLEU Score:", round(sentence_bleu([reference_translation.split()], candidate_tokens),2))
   st.write("Meteor Score:", round(meteor([word_tokenize(candidate_translation)],word_tokenize(reference_translation)), 2))
-  st.write("meteor_score Score:", round(nltk.translate.meteor_score.meteor_score(candidate_translation, reference_translation),2))
+  st.write("meteor_score Score:", round(nltk.translate.meteor_score.meteor_score(reference_translations, candidate_translation),2))
