@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import nltk
-import meteor_score
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('stopwords')
