@@ -29,5 +29,5 @@ if st.button:
   references_tokens = [ref.split() for ref in reference_translations]
   st.write("Corpus BLEU Score:", round(corpus_bleu([references_tokens], [candidate_tokens]),2))
   st.write("Sentence BLEU Score:", round(sentence_bleu([reference_translation.split()], candidate_tokens),2))
-  st.write("Meteor Score:", round(meteor([word_tokenize(candidate_translation)],word_tokenize(reference_translation)), 2))
+  st.write("Meteor Score:", round(meteor([word_tokenize(reference_translation)],word_tokenize(candidate_translation)), 2))
  # st.write("meteor_score Score:", round(meteor_score([references_tokens], [candidate_tokens]),2))
