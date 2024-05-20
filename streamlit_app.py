@@ -21,11 +21,11 @@ st.button("Calculate Metrics", type="primary")
 
 if st.button:
   candidate_translations = [candidate_translation]
-  reference_translations = [[reference_translation]]
+  reference_translations = [reference_translation]
   candidate_tokens = candidate_translation.split()
   references_tokens = [ref.split() for ref in reference_translations]
   st.write("Corpus BLEU Score:", round(corpus_bleu([references_tokens], [candidate_tokens]),2))
   st.write("Meteor Score:", round(meteor([word_tokenize(reference_translation)],word_tokenize(candidate_translation)), 2))
  # st.write("meteor_score Score:", round(meteor_score([references_tokens], [candidate_tokens]),2))
   bleu = evaluate.load('bleu')
-  st.write("Evaluate blue score", bleu.compute(predictions=candidate_translations, references=reference_translations))
+  st.write("Evaluate blue score", bleu.compute(predictions=candidate_translations, references=[reference_translations]))
