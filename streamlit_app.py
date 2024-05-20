@@ -27,4 +27,4 @@ if st.button:
   st.write("Meteor Score:", round(meteor([word_tokenize(reference_translation)],word_tokenize(candidate_translation)), 2))
  # st.write("meteor_score Score:", round(meteor_score([references_tokens], [candidate_tokens]),2))
   bleu = evaluate.load('bleu')
-  st.write("Evaluate blue score", round(bleu.compute(predictions=[candidate_translation], references=[reference_translation]),2))
+  st.write("Evaluate blue score", round(bleu.compute(predictions=[candidate_translation], references=[reference_translations]),2))
