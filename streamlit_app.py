@@ -20,6 +20,7 @@ reference_translation = st.text_area("reference_translation")
 st.button("Calculate Metrics", type="primary")
 
 if st.button:
+  candidate_translations = [candidate_translation]
   reference_translations = [reference_translation]
   candidate_tokens = candidate_translation.split()
   references_tokens = [ref.split() for ref in reference_translations]
@@ -27,4 +28,4 @@ if st.button:
   st.write("Meteor Score:", round(meteor([word_tokenize(reference_translation)],word_tokenize(candidate_translation)), 2))
  # st.write("meteor_score Score:", round(meteor_score([references_tokens], [candidate_tokens]),2))
   bleu = evaluate.load('bleu')
-  st.write("Evaluate blue score", round(bleu.compute(predictions=[candidate_translation], references=[reference_translations]),2))
+  st.write("Evaluate blue score", bleu.compute(predictions=candidate_translations, references=references))
