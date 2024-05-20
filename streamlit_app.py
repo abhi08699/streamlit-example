@@ -21,7 +21,7 @@ st.button("Calculate Metrics", type="primary")
 
 if st.button:
   candidate_translations = [candidate_translation]
-  reference_translations = [reference_translation]
+  reference_translations = [[reference_translation]]
   candidate_tokens = candidate_translation.split()
   references_tokens = [ref.split() for ref in reference_translations]
   st.write("Corpus BLEU Score:", round(corpus_bleu([references_tokens], [candidate_tokens]),2))
